@@ -3,7 +3,7 @@
 @extends('layouts.plantillapadre')
 @section('plantillapadre')
 <center>
-<div class="col-4">
+<div class="col-8">
   <br>
     <br>
     <br>
@@ -16,24 +16,27 @@
       </div>
       <div class="carousel-inner">
         <div class="carousel-item active" data-bs-interval="5000">
-          <img src="img/1.jpg" class="d-block w-100"  alt="...">
+          <img src="img/LOGO-JUAN.jpg" class="d-block w-100"  alt="...">
           <div class="carousel-caption d-none d-md-block">
-            <h5>First slide label</h5>
-            <p>Some representative placeholder content for the first slide.</p>
+            <h5>Plan Bronce</h5>
+            <p>Inversión inicial de 60$</p>
+            <button class="btn btn-secondary"> ver más</button>
           </div>
         </div>
         <div class="carousel-item" data-bs-interval="5000">
-          <img src="img/1.jpg" class="d-block w-100"  alt="...">
+          <img src="img/LOGO-JUAN.jpg" class="d-block w-100"  alt="...">
           <div class="carousel-caption d-none d-md-block">
-            <h5>Second slide label</h5>
-            <p>Some representative placeholder content for the second slide.</p>
+            <h5>Plan Plata</h5>
+            <p>Inversión inicial de 80$</p>
+            <button class="btn btn-secondary"> ver más</button>
           </div>
         </div>
         <div class="carousel-item" data-bs-interval="5000">
-          <img src="img/1.jpg" class="d-block w-100"  alt="...">
+          <img src="img/LOGO-JUAN.jpg" class="d-block w-100"  alt="...">
           <div class="carousel-caption d-none d-md-block">
-            <h5>Third slide label</h5>
-            <p>Some representative placeholder content for the third slide.</p>
+            <h5>Plan Oro</h5>
+            <p>Inversión inicial de 100$</p>
+            <button class="btn btn-secondary"> ver más</button>
           </div>
         </div>
       </div>
@@ -83,7 +86,7 @@
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
             <div class="icon-box">
               <div class="icon"><i class="bx bx-world"></i></div>
-              <h4><a href="world.html">Nuestra Red</a></h4>
+              <h4><a href="world">Nuestra Red</a></h4>
               <p>En la actualidad contamos con un equipo multinacional de trader de gran parte de Europa, Norte America y Latam, sin limitantes de idioma</p>
             </div>
           </div>
@@ -91,7 +94,7 @@
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
             <div class="icon-box">
               <div class="icon"><i class="bx bx-slideshow"></i></div>
-              <h4><a href="multimedia.html">Multimedia</a></h4>
+              <h4><a href="multimedia">Multimedia</a></h4>
               <p>En esta galería podrás ver como divercificamos tu dinero y nuestro sistema de respaldados</p>
             </div>
           </div>
@@ -99,7 +102,7 @@
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
             <div class="icon-box">
               <div class="icon"><i class='bx bx-chat'></i></i></div>
-              <h4><a href="comunidad.html">Comunidad</a></h4>
+              <h4><a href="comunidad">Comunidad</a></h4>
               <p>más de 35 mil usuarios nos respaldan como empresa y como una opción segura para tu inversión</p>
             </div>
           </div>
@@ -142,7 +145,7 @@
 
      <!--table coins wins animate-->
     <div class="container">
-        <table class="table">
+        <table class="table table-dark table-hover">
   <thead class="" id="">
     <tr>
       <th scope="col">#</th>
@@ -156,24 +159,25 @@
       <th scope="row">1</th>
       <td>Mark</td>
       <td>150</td>
-      <td>@350</td>
+      <td>350</td>
     </tr>
     <tr>
       <th scope="row">2</th>
       <td>Jacob</td>
       <td>200</td>
-      <td>@450</td>
+      <td>450</td>
     </tr>
     <tr>
       <th scope="row">3</th>
-      <td colspan="2">Larry the Bird</td>
-      <td>@twitter</td>
+      <td>Jacob</td>
+      <td>200</td>
+      <td>450</td>
     </tr>
     <tr>
       <th scope="row">4</th>
       <td>Mark</td>
       <td>500</td>
-      <td>@1150</td>
+      <td>1150</td>
     </tr>
     <tr>
       <th scope="row">5</th>
@@ -183,8 +187,9 @@
     </tr>
     <tr>
       <th scope="row">6</th>
-      <td colspan="2">Larry the Bird</td>
-      <td>@twitter</td>
+      <td>Freddy</td>
+      <td>200</td>
+      <td>450</td>
     </tr>
 
   </tbody>

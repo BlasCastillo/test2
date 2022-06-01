@@ -27,6 +27,15 @@ Route::get('/briefcase', function () {
 Route::get('/proposito', function () {
     return view('proposito');
 });
+Route::get('/multimedia', function () {
+    return view('multimedia');
+});
+Route::get('/world', function () {
+    return view('world');
+});
+Route::get('/comunidad', function () {
+    return view('comunidad');
+});
 
 Route::resource('personas', PersonaController::class);
 Route::resource('plans', PlanController::class);
