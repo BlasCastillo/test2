@@ -7,7 +7,8 @@
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <title>4Capital</title>
     <link href="{{asset('css/estilos.css')}}" rel='stylesheet'>
-    
+    <script src="https://apps.elfsight.com/p/platform.js" defer></script>
+<div class="elfsight-app-3f088d66-1145-4740-b0f7-df461d75fdcb"></div>
     <link href="{{asset('css/bootstrap/css/bootstrap.min.css')}}" rel='stylesheet'>
     <link href="{{asset('css/boxicons/css/boxicons.min.css')}}" rel='stylesheet'>
     <link rel="icon" href="{!!asset('img/favicon.png') !!}">
@@ -43,24 +44,42 @@
     <header class="header" id="header">
         <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"> </i> </div>
      
-       <div class="icon-header"> <img class="btn-whatsapp" style="cursor: hand;" src="img/wh.png" width="32" height="32" alt="Whatsapp" onclick="window.location.href='https://wa.me/584245937898?text=Hola!%20Estoy%20interesado%20en%20tu%20servicio'">
-        <a href="twitter.com"><img src="img/tw.png"></a></i>
-        <a href="twitter.com"><img src="img/fb.png"></a>
-        <a href="twwiter.com"><img src="img/in.png"></a>
-        <a href="twwiter.com"><img src="img/lk.png"></a>
+       <div class="icon-header"> <img class="btn-whatsapp" style="cursor: hand;" src="{{asset('img/wh.png')}}" width="32" height="32" alt="Whatsapp" onclick="window.location.href='https://wa.me/584245937898?text=Hola!%20Estoy%20interesado%20en%20tu%20servicio'">
+        <a href="twitter.com"><img src="{{asset('img/tw.png')}}"></a></i>
+        <a href="twitter.com"><img src="{{asset('img/fb.png')}}"></a>
+        <a href="twwiter.com"><img src="{{asset('img/in.png')}}"></a>
+        <a href="twwiter.com"><img src="{{asset('img/lk.png')}}"></a>
      
     </div>
     	
         <div class="" >
+          
         @if (Route::has('login'))
                 <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
+                  
                     @auth
-                        <a href="{{ url('/home') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Home</a>
+                    <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    {{ Auth::user()->name }}
+                                </a>
+
+                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
+                                </div>
+                            </li>
                     @else
-                        <a href="{{ route('login') }}" ><img src="img/iniciar.jpg"></a>
+                        <a href="{{ route('login') }}" ><img src="{{asset('img/iniciar.jpg')}}"></a>
 
                         @if (Route::has('register'))
-                            <a href="{{ route('register') }}" ><img src="img/registrar.jpg" alt="Registrar" width="32px" height="32px"></a>
+                            <a href="{{ route('register') }}" ><img src="{{asset('img/registrar.jpg')}}" alt="Registrar" width="32px" height="32px"></a>
                         @endif
                     @endauth
                 </div>
@@ -76,7 +95,7 @@
     <div class="l-navbar" id="nav-bar">
         <nav class="nav">
             <div> <a href="/" class="nav_logo"> <i class='bx bx-layer nav_logo-icon'></i> <span class="nav_logo-name">4Capital</span> </a>
-                <div class="nav_list"> <a href="dashboard.html" class="nav_link active"> <i class='bx bx-sort-down'></i> <span class="nav_name">Dashboard</span> </a> <a href="#" class="nav_link"> <i class='bx bx-user nav_icon'></i> <span class="nav_name">Users</span> </a> <a href="#" class="nav_link"> <i class='bx bx-message-square-detail nav_icon'></i> <span class="nav_name">Messages</span> </a> <a href="#" class="nav_link"> <i class='bx bx-bookmark nav_icon'></i> <span class="nav_name">Bookmark</span> </a> <a href="#" class="nav_link"> <i class='bx bx-folder nav_icon'></i> <span class="nav_name">Files</span> </a> <a href="#" class="nav_link"> <i class='bx bx-bar-chart-alt-2 nav_icon'></i> <span class="nav_name">Stats</span> </a> </div>
+                <div class="nav_list"> <a href="dash" class="nav_link active"> <i class='bx bx-sort-down'></i> <span class="nav_name">Dashboard</span> </a> <a href="#" class="nav_link"> <i class='bx bx-user nav_icon'></i> <span class="nav_name">Users</span> </a> <a href="#" class="nav_link"> <i class='bx bx-message-square-detail nav_icon'></i> <span class="nav_name">Messages</span> </a> <a href="#" class="nav_link"> <i class='bx bx-bookmark nav_icon'></i> <span class="nav_name">Bookmark</span> </a> <a href="#" class="nav_link"> <i class='bx bx-folder nav_icon'></i> <span class="nav_name">Files</span> </a> <a href="#" class="nav_link"> <i class='bx bx-bar-chart-alt-2 nav_icon'></i> <span class="nav_name">Stats</span> </a> </div>
             </div> <a href="#" class="nav_link"> <i class='bx bx-log-out nav_icon'></i> <span class="nav_name">SignOut</span> </a>
         </nav>
     </div>
@@ -90,7 +109,36 @@
     <!-- Section: Social media -->
     <section
       class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom"
-    >
+    ><!-- Messenger Plugin de chat Code -->
+    <div id="fb-root"></div>
+
+<!-- Your Plugin de chat code -->
+<div id="fb-customer-chat" class="fb-customerchat">
+</div>
+
+<script>
+  var chatbox = document.getElementById('fb-customer-chat');
+  chatbox.setAttribute("page_id", "413565206125857");
+  chatbox.setAttribute("attribution", "biz_inbox");
+</script>
+
+<!-- Your SDK code -->
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      xfbml            : true,
+      version          : 'v14.0'
+    });
+  };
+
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = 'https://connect.facebook.net/es_LA/sdk/xfbml.customerchat.js';
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
       <!-- Left -->
       <div class="me-5 d-none d-lg-block">
         <span>4Capital Traders Group Company</span>
@@ -171,7 +219,7 @@
               <a href="/" class="text-reset">Inicio</a>
             </p>
             <p>
-              <a href="#!" class="text-reset">planes</a>
+              <a href="{{asset('discleimer.pdf')}}" class="text-reset">Disclaimer</a>
             </p>
             <p>
               <a href="login" class="text-reset">Login</a>
@@ -228,6 +276,33 @@
   <script type='text/javascript' src="{{asset('js/api.js')}}" ></script>
   <script type='text/javascript' src='#'></script>
   <script type='text/javascript'></script>
-  
+  <!-- Enlazar CSS Floating WhatsApp -->
+<link rel="stylesheet" href="https://rawcdn.githack.com/jerfeson/floating-whatsapp/0310b4cd88e9e55dc637d1466670da26b645ae49/floating-wpp.min.css"><!-- Enlazar JS Floating WhatsApp -->
+<script type="text/javascript" src="https://rawcdn.githack.com/jerfeson/floating-whatsapp/0310b4cd88e9e55dc637d1466670da26b645ae49/floating-wpp.min.js"></script><div id="WABoton"></div><!-- Inicializar librería Floating WhatsApp  -->
+<script>
+jQuery(document).ready(function($){
+$('#WABoton').floatingWhatsApp({
+phone: '+18647761941', // Número WhatsApp Business
+popupMessage: 'Hola 👋 ¿Cómo podemos ayudarte?', // Mensaje pop up
+message: "Hola 4Capital...", // Mensaje por defecto
+showPopup: true, // Habilita el pop up
+headerTitle: 'WhatsApp Chat', // Título del header
+headerColor: '#25D366', // Color del header
+buttonImage: '<img src="https://rawcdn.githack.com/rafaelbotazini/floating-whatsapp/3d18b26d5c7d430a1ab0b664f8ca6b69014aed68/whatsapp.svg" />', // Icono WhatsApp
+size: '72px', // Tamaño del icono
+backgroundColor: '#00000', // Color de fondo del botón
+position: "left", // Posición del icono
+avatar: 'https://www.perdomoyasociados.com/tecnologia/wp-content/uploads/2018/02/avatar021-300x254.png', // URL imagen avatar
+avatarName: '4Capital Soporte', // Nombre del avatar
+avatarRole: 'Soporte', // Rol del avatar
+//autoOpenTimeout: 3000,
+zIndex: '99999',
+});
+});
+</script>
+
+
+
+
 </body>
 </html>@yield('plantillapadre')

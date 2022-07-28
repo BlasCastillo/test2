@@ -1,6 +1,7 @@
 <?php
 use App\Http\Controllers\PersonaController;
 use App\Http\Controllers\PlanController;
+use App\Http\Controllers\CompraController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -37,8 +38,19 @@ Route::get('/comunidad', function () {
     return view('comunidad');
 });
 
+Route::get('/dashboard', function () {
+    return view('dashboard');
+}) ->middleware('age');
+
+
 Route::resource('personas', PersonaController::class);
 Route::resource('plans', PlanController::class);
+Route::resource('compras', CompraController::class);
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+/*Route::get('prueba2', function(){
+return view('dash');
+});*/

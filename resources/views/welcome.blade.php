@@ -2,57 +2,70 @@
 
 @extends('layouts.plantillapadre')
 @section('plantillapadre')
-<center>
-<div class="col-8">
-  <br>
-    <br>
-    <br>
+<link rel="stylesheet" href="{{ asset('css/estilostablas.css')}} ">
 
-    <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
-      <div class="carousel-indicators">
-        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
-      </div>
-      <div class="carousel-inner">
-        <div class="carousel-item active" data-bs-interval="5000">
-          <img src="img/LOGO-JUAN.jpg" class="d-block w-100"  alt="...">
-          <div class="carousel-caption d-none d-md-block">
-            <h5>Plan Bronce</h5>
-            <p>Inversión inicial de 60$</p>
-            <button class="btn btn-secondary"> ver más</button>
-          </div>
-        </div>
-        <div class="carousel-item" data-bs-interval="5000">
-          <img src="img/LOGO-JUAN.jpg" class="d-block w-100"  alt="...">
-          <div class="carousel-caption d-none d-md-block">
-            <h5>Plan Plata</h5>
-            <p>Inversión inicial de 80$</p>
-            <button class="btn btn-secondary"> ver más</button>
-          </div>
-        </div>
-        <div class="carousel-item" data-bs-interval="5000">
-          <img src="img/LOGO-JUAN.jpg" class="d-block w-100"  alt="...">
-          <div class="carousel-caption d-none d-md-block">
-            <h5>Plan Oro</h5>
-            <p>Inversión inicial de 100$</p>
-            <button class="btn btn-secondary"> ver más</button>
-          </div>
-        </div>
-      </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
-    </div>
-  
+<div class="container-fluid">
+<br><br>
+
+<div class="promos">  
+<div class="promo">
+  <div class="deal">
+    <span class="titulo">Premium</span>
+    <span class="ganancias"> Dividendos en <br> 21 días continuos </span>
+  </div>
+  <span class="price">$100</span>
+  <ul class="features">
+    <style>
+      .ganancias{
+       text-align:left;
+       font-size: 28pt;
+       border-color:white;
+     
+      }
+      .titulo{
+        color:rgba(255,255,255);
+      }
+      .promo{
+        font-size:10pt;
+        color:rgb(100,107,99);
+      }
+    </style>
+    <li class="promo">duplica tu inversión</li>
+    <li class="promo" >cobros directos a tu wallet</li>
+    <li class="promo">opción de reinversión</li>   
+  </ul><a href="login">
+  <button>Registrar</button></a>
+</div>
+<div class="promo scale">
+  <div class="deal">
+    <span class="titulo">Plus</span>
+    <span>Dividendos en 15 días continuos</span>
+  </div>
+  <span class="price">$200</span>
+  <ul class="features">
+  <li>duplica tu inversión</li>
+    <li>cobros directos a tu wallet</li>
+    <li>opción de reinversión</li>   
+  </ul><a href="login">
+  <button>Registrar</button></a>
+</div>
+<div class="promo">
+  <div class="deal">
+    <span class="titulo">Basic</span>
+    <span class="promo">Dividendos en <br> 30 días continuos</span>
+  </div>
+  <span class="price">$50</span>
+  <ul class="features">
+  <li class="promo">duplica tu inversión</li>
+    <li class="promo">cobros directos a tu wallet</li>
+    <li class="promo">opción de reinversión</li>   
+  </ul><a href="login">
+  <button>Registrar</button></a>
+</div>
+<br><br>
+</div>
 </div>
 
-</center>
 <!--End plans animate movil-->
  <!-- ======= Services Section ======= -->
     <section id="services" class="services">
@@ -360,7 +373,10 @@
     </div>
   </div>
 </div>
+<div class="container" >
 
+
+</div>
 @endsection
 
 
